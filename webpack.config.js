@@ -95,6 +95,14 @@ module.exports = (env) => {
   }
 
   config.devtool = 'eval-source-map'
+  config.devServer = {
+    client: {
+      overlay: {
+        warnings: false,
+        errors: true
+      }
+    }
+  }
 
   console.log(config)
 

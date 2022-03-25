@@ -36,7 +36,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@watermarkinsights/ripple-react": "3.7.0",
+    "@watermarkinsights/ripple-react": "^3.8.2",
     "classnames": "^2.3.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
