@@ -1,0 +1,13 @@
+.header {
+  padding-right: 20px;
+  z-index: 100;
+}
+
+:global(.top-bar .logo img) {
+  display: inline;
+  max-width: 380px;
+  max-height: 34px;
+  vertical-align: -11%;
+  width: auto;
+  height: auto;
+}

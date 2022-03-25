@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  height: 100%;
+}
+
+:global(.app-container) {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  font-size: .875rem;
+  overflow: hidden;
+}

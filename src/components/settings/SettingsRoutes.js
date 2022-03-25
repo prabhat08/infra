@@ -1,5 +1,9 @@
 const routes = {
   path: 'settings',
+  onEnter: (params, replace) => {
+    if (params.location.pathname === '/settings') replace('/settings/configuration')
+  },
+  content: require('./Settings').default,
   getComponents(nextState, cb) {
     require.ensure([], function (require) {
       cb(null, {
@@ -9,17 +13,17 @@ const routes = {
   },
   childRoutes: [
     {
-      path: "home",
+      path: 'configuration',
       getComponents(nextState, cb) {
         require.ensure([], function (require) {
           cb(null, {
-            view: require('./home/Home').default
+            view: require('./configuration/Configuration').default
           })
         })
       }
     },
     {
-      path: "imports",
+      path: 'imports',
       getComponents(nextState, cb) {
         require.ensure([], function (require) {
           cb(null, {

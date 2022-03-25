@@ -5,8 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>React and Webpack4</title>
+  <link href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.watermarkinsights.com/css/1.1.5/wm-global.css" rel="stylesheet">
+  <script type="text/javascript">
+    var wmrk = wmrk || {};
+    wmrk.Utils = wmrk.Utils || {};
+    wmrk.isTabbed = false;
+
+    (function () {
+      wmrk.handleFirstTab = function (e) {
+        var key = e.key || e.keyCode;
+        if (key === 'Tab' || key === 9) {
+          document.body.classList.add('user-is-tabbing');
+          wmrk.isTabbed = true;
+          window.removeEventListener('keydown', wmrk.handleFirstTab);
+          window.addEventListener('mousedown', wmrk.handleMouseDownOnce);
+        }
+      }
+
+      wmrk.handleMouseDownOnce = function () {
+        document.body.classList.remove('user-is-tabbing');
+        wmrk.isTabbed = false;
+        window.removeEventListener('mousedown', wmrk.handleMouseDownOnce);
+        window.addEventListener('keydown', wmrk.handleFirstTab);
+      }
+
+      window.addEventListener('keydown', wmrk.handleFirstTab);
+    })();
+  </script>
 </head>
 <body>
-  <section id="root"></section>
-<script type="text/javascript" src="/src/index.js"></script><script type="text/javascript" src="/src/components.js"></script><script type="text/javascript" src="/src/index.js"></script><script type="text/javascript" src="/src/components.js"></script></body>
+  <div class='app-container'></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
 </html>
