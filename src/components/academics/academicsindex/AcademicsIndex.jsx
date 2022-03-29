@@ -10,7 +10,7 @@ const AcademicsIndex = ({router}) => {
   return (
     <div>
       <h1>Academics Index</h1>
-      <WmButton onClick={handleClick}>Choose Node 1</WmButton>
+      <WmButton onClick={handleClick}>Choose Node</WmButton>
     </div>
   )
 }

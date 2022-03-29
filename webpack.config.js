@@ -96,6 +96,12 @@ module.exports = (env) => {
 
   config.devtool = 'eval-source-map'
   config.devServer = {
+    proxy: [
+      {
+        context: ['/evidence/create', '/api', '/stylesheets', '/javascripts', '/images', '/fonts'],
+        target: 'http://localhost:3000'
+      }
+    ],
     client: {
       overlay: {
         warnings: false,
